@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Woobizz Hook 15\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-22 12:00+0000\n"
+"PO-Revision-Date: 2017-07-22 12:00+0000\n"
+"Last-Translator: André Meza <andre.roussille@gmail.com>\n"
+"Language-Team: Spanish (Spain)\n"
+"Language: es-ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the plugin
+msgid "Woobizz Hook 15"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "http://woobizz.com"
+msgstr ""
+
+#. Author of the plugin
+msgid "Woobizz"
+msgstr ""
+
+#: woobizz-hook-15.php:24
+msgid "Adresse Line 1"
+msgstr "Dirección"
+
+#: woobizz-hook-15.php:25
+msgid "30 characters máx."
+msgstr "30 caracteres máx."
+
+#: woobizz-hook-15.php:26
+msgid "READ!"
+msgstr "LEER!"
+
+#: woobizz-hook-15.php:27 woobizz-hook-15.php:41
+msgid "Address Line 2"
+msgstr "Complemento de Dirección"
+
+#: woobizz-hook-15.php:43
+msgid ""
+"Fill this space only with the name and number of the street where you live "
+"(street, avenue, boulevard, etc.), use the next space to write any other "
+"data. This box is limited to 30 characters, use abbreviations if necessary."
+msgstr ""
+"Llene este espacio únicamente con el nombre y número de la calle donde vive "
+"(calle,avenida,bulevar, etc.), utilice la siguiente casilla “complemento de "
+"dirección” para rellenar otros datos de su dirección. Esta casilla está "
+"limitada a 30 caracteres, utilice abreviaciones si es necesario."
+
+#: woobizz-hook-15.php:44 woobizz-hook-15.php:46
+msgid ""
+"Please remember to verify your address before you send it, any mistake may "
+"result in the loss or return of the product, causing extra costs. These "
+"shall be entirely your responsibility."
+msgstr ""
+"Le recordamos que debe verificar su dirección antes de enviarla, de no "
+"hacerlo, puede causar la pérdida del producto o el retorno del mismo "
+"causando gastos extras mismos que serán enteramente a su cargo"
+
+#: woobizz-hook-15.php:45
+msgid ""
+"Use this space to write any other data such as your building’s name, the "
+"area, urbanization, floor number or other address details. This box is "
+"limited to 30 characters, use abbreviations if necessary."
+msgstr ""
+"Utilice este espacio para rellenar otros datos de su dirección como: el "
+"nombre del edificio, la zona, urbanización, número de piso u otro detalle de "
+"su dirección. Esta casilla está limitada a 30 caracteres, utilice "
+"abreviaciones si necesario."
+
+#. Description of the plugin
+msgid "Change billing & shipping titles and limit number of caracters to 30"
+msgstr ""
+"Cambie los títulos de facturación y envío y limite el número de caracteres a "
+"30"
