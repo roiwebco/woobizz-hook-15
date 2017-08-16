@@ -2,7 +2,7 @@
 /*
 Plugin Name: Woobizz Hook 15
 Plugin URI: http://woobizz.com
-Description: Change billing & shipping titles and limit number of caracters to 30
+Description: Limit address caracters to 30 and show a help lithbox
 Author: Woobizz
 Author URI: http://woobizz.com
 Version: 1.0.0
@@ -22,7 +22,6 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	add_filter( 'woocommerce_checkout_fields' , 'custom_wc_checkout_fields' );
     add_action("wp_footer", "woobizzhook15_max_length");
 	add_filter( 'woocommerce_after_checkout_form' , 'woobizzhook15_lightbox_content' );
-	
 }else{
 	//Show message on admin
 	//echo "woocommerce is not active";
@@ -31,13 +30,10 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 //Check if Woobizz LightBox is active
 if ( in_array( 'woobizz-lightbox/woobizz-lightbox.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 	//echo "woobizz lightbox is active";
-	
-	
 }else{
 	//Show message on admin
 	//echo "woobizz lightbox is not active";
 	add_action( 'admin_notices', 'woobizzhook15_lb_admin_notice' );
-	
 }
 //Add Hook 15
 //Change billing & shipping titles
@@ -45,7 +41,6 @@ if ( in_array( 'woobizz-lightbox/woobizz-lightbox.php', apply_filters( 'active_p
 // START HOOK 15 FUNCTIONS
 //---------------------------------------------------------------
 function custom_wc_checkout_fields( $fields ) {
-	
 	//variables to translate
 	$woobizzhook15_label1= __('Adresse Line 1','woobizzhook15');
 	$woobizzhook15_limit= __('30 characters máx.','woobizzhook15');
@@ -57,7 +52,6 @@ function custom_wc_checkout_fields( $fields ) {
 	$fields['shipping']['shipping_address_1']['label'] = $woobizzhook15_label1." (".$woobizzhook15_limit.") "."<a href='#' data-featherlight='#SAD1'><strong>".$woobizzhook15_link."</strong></a>";	
 	$fields['shipping']['shipping_address_2']['label'] = $woobizzhook15_label2." (".$woobizzhook15_limit.") "."<a href='#' data-featherlight='#SAD1'><strong>".$woobizzhook15_link."</strong></a>";	
 	return $fields;
-
 }
 function woobizzhook15_lightbox_content(){
 	//Titles
@@ -75,7 +69,6 @@ function woobizzhook15_lightbox_content(){
 			<p><?php echo $woobizzhook15_lightbox_line1_text1;?></p>
 			<p><?php echo $woobizzhook15_lightbox_line1_text2;?></p>
 			</div>
-
 		</div>
 		<div id="BAD2" class="lightbox">
 			<div class="wb-lightbox-content">		
@@ -83,7 +76,6 @@ function woobizzhook15_lightbox_content(){
 			<p><?php echo $woobizzhook15_lightbox_line2_text1;?></p>
 			<p><?php echo $woobizzhook15_lightbox_line2_text2;?></p>
 			</div>
-
 		</div>
 		<div id="SAD1" class="lightbox">
 			<div class="wb-lightbox-content">
@@ -91,7 +83,6 @@ function woobizzhook15_lightbox_content(){
 			<p><?php echo $woobizzhook15_lightbox_line1_text1;?></p>
 			<p><?php echo $woobizzhook15_lightbox_line1_text2;?></p>
 			</div>
-
 		</div>
 		<div id="SAD2" class="lightbox">
 			<div class="wb-lightbox-content">		
@@ -99,9 +90,7 @@ function woobizzhook15_lightbox_content(){
 			<p><?php echo $woobizzhook15_lightbox_line2_text1;?></p>
 			<p><?php echo $woobizzhook15_lightbox_line2_text2;?></p>
 			</div>
-
 		</div>
-				
 	</html>		
 	<?php
 }
@@ -112,11 +101,24 @@ function woobizzhook15_max_length(){
 	?>
 	<script>
 	jQuery(document).ready(function($){
+	//Limitation adapted for pc
 		  $("#billing_address_1").attr('maxlength','30');
 		  $("#billing_address_2").attr('maxlength','30');
 		  $("#shipping_address_1").attr('maxlength','30');
 		  $("#shipping_address_2").attr('maxlength','30');
-		 // more fields
+	//Limitation adapted for mobiles
+		  //Billing Adress 1
+		  var $billing_address_1 = $("#billing_address_1")
+		  $billing_address_1.keyup(function(e){var max = 30;if ($billing_address_1.val().length > max){$billing_address_1.val($billing_address_1.val().substr(0, max));}});
+		  //Billing Adress 2
+		  var $billing_address_2 = $("#billing_address_2")
+		  $billing_address_2.keyup(function(e){var max = 30;if ($billing_address_2.val().length > max){$billing_address_2.val($billing_address_2.val().substr(0, max));}});
+		  //Shipping Adress 1
+		  var $shipping_address_1 = $("#shipping_address_1")
+		  $shipping_address_1.keyup(function(e){var max = 30;if ($shipping_address_1.val().length > max){$shipping_address_1.val($shipping_address_1.val().substr(0, max));}});
+		  //Shipping Adress 2
+		  var $shipping_address_2 = $("#shipping_address_2")
+		  $shipping_address_2.keyup(function(e){var max = 30;if ($shipping_address_2.val().length > max){$shipping_address_2.val($shipping_address_2.val().substr(0, max));}});
 	});
 	</script>
 	<?php
