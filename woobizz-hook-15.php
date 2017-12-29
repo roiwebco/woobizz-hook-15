@@ -2,7 +2,7 @@
 /*
 Plugin Name: Woobizz Hook 15
 Plugin URI: http://woobizz.com
-Description: Limit address caracters to 30 and show a help lithbox
+Description: Change billing & shipping titles and limit number of characters to 30
 Author: Woobizz
 Author URI: http://woobizz.com
 Version: 1.0.0
@@ -20,7 +20,7 @@ function woobizzhook15_load_textdomain() {
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 	//echo "woocommerce is active";
 	add_filter( 'woocommerce_checkout_fields' , 'custom_wc_checkout_fields' );
-    add_action("wp_footer", "woobizzhook15_max_length");
+   	add_action("wp_footer", "woobizzhook15_max_length");
 	add_filter( 'woocommerce_after_checkout_form' , 'woobizzhook15_lightbox_content' );
 }else{
 	//Show message on admin
